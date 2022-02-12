@@ -1,4 +1,4 @@
-package com.example.kan_do
+package com.unrelatedstudios.kan_do
 
 import io.flutter.embedding.android.FlutterActivity
 

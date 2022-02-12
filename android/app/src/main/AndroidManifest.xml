@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kan_do">
+    package="com.unrelatedstudios.kan_do">
    <application
         android:label="kan_do"
         android:name="${applicationName}"

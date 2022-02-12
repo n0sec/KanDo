@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "532179604909",
+    "project_id": "kando-90e12",
+    "storage_bucket": "kando-90e12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532179604909:android:717ee00c12cbefe6dc3d24",
+        "android_client_info": {
+          "package_name": "com.unrelatedstudios.kan_do"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532179604909-ca0s84tjh6rkb2n1h5dogb5h271tmsok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVoI5QCFoT7K0UpJdzIpatidExd3uKGyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532179604909-ca0s84tjh6rkb2n1h5dogb5h271tmsok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
