@@ -47,7 +47,7 @@ class MyHomePage extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView(
-          children: const [
+          children: [
             DrawerHeader(
               child: Align(
                 alignment: Alignment.bottomLeft,
@@ -79,6 +79,14 @@ class MyHomePage extends StatelessWidget {
               leading: Icon(Icons.filter_alt_outlined),
               title: Text('Filters'),
             ),
+            ListTile(
+              title: TextButton(
+                child: Text("Signout"),
+                onPressed: () {
+                  Signout(context);
+                },
+              ),
+            ),
           ],
         ),
       ),
@@ -86,5 +94,13 @@ class MyHomePage extends StatelessWidget {
         child: Text('Hello World!'),
       ),
     );
+  }
+
+  Future Signout(context) async {
+    await FirebaseAuth.instance.signOut().then((_) {
+      Navigator.pushReplacementNamed(context, 'login');
+
+      return LoginScreen(title: 'Login');
+    });
   }
 }
