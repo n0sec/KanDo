@@ -23,8 +23,9 @@ class KanDo extends StatelessWidget {
       initialRoute: FirebaseAuth.instance.currentUser == null ? 'login' : '/',
       routes: {
         '/': (ctx) => const MyHomePage(title: 'KanDo'),
-        'login': (context) => LoginScreen(title: 'Log in')
+        'login': (context) => const LoginScreen(title: 'Log in')
       },
+      debugShowCheckedModeBanner: false,
     );
   }
 }
