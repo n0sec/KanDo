@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return KanDo();
+            return const KanDo();
           } else {
             return LoginWidget();
           }

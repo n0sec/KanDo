@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginWidget extends StatefulWidget {
-  LoginWidget({Key? key}) : super(key: key);
+  const LoginWidget({Key? key}) : super(key: key);
 
   @override
   State<LoginWidget> createState() => _LoginWidgetState();
@@ -15,7 +15,8 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
+      child: SizedBox(
+        width: 275,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -23,27 +24,32 @@ class _LoginWidgetState extends State<LoginWidget> {
               controller: emailController,
               cursorColor: Colors.black,
               textInputAction: TextInputAction.next,
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(
+                labelText: 'Email',
+                prefixIcon: Icon(Icons.email),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TextField(
               controller: passwordController,
               cursorColor: Colors.black,
               textInputAction: TextInputAction.next,
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: const InputDecoration(
+                labelText: 'Password',
+                prefixIcon: Icon(Icons.lock),
+              ),
               obscureText: true,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            ElevatedButton.icon(
+            ElevatedButton(
               style: ElevatedButton.styleFrom(
-                minimumSize: Size.fromHeight(50),
+                minimumSize: const Size.fromHeight(45),
               ),
-              icon: Icon(FontAwesomeIcons.lock),
-              label: Text("Sign in"),
+              child: const Text("Sign in"),
               onPressed: signIn,
             ),
           ],
