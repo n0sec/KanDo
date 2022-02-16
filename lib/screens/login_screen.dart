@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'widgets/login_widget.dart';
-import 'main.dart';
+import '../widgets/login_widget.dart';
+import '../main.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key, required this.title}) : super(key: key);
@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
           if (snapshot.hasData) {
             return const KanDo();
           } else {
-            return LoginWidget();
+            return const LoginWidget();
           }
         },
       ),
