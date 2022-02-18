@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'screens/login_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import 'widgets/to_do_list_item.dart';
 
@@ -22,7 +23,7 @@ class KanDo extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      initialRoute: FirebaseAuth.instance.currentUser != null ? 'login' : '/',
+      initialRoute: FirebaseAuth.instance.currentUser == null ? 'login' : '/',
       routes: {
         '/': (ctx) => const MyHomePage(title: 'KanDo'),
         'login': (context) => const LoginScreen(title: 'Log in')
@@ -103,6 +104,7 @@ class MyHomePage extends StatelessWidget {
   }
 
   Future signOut(context) async {
+    await GoogleSignIn().disconnect();
     await FirebaseAuth.instance.signOut().then((_) {
       Navigator.pushReplacementNamed(context, 'login');
 
