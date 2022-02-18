@@ -8,7 +8,7 @@ enum Priority {
 
 class ToDoItem {
   final String id;
-  final String? label;
+  final List<String>? label;
   final Color? labelColor;
   final Enum priority;
   final String? description;
