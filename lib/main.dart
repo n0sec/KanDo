@@ -49,7 +49,7 @@ class MyHomePage extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               child: Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
@@ -64,27 +64,27 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.red,
               ),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.inbox),
               title: Text('Inbox'),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.calendar_today_outlined),
               title: Text('Today'),
             ),
-            ListTile(
+            const ListTile(
               leading: FaIcon(FontAwesomeIcons.calendarAlt),
               title: Text('Upcoming'),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.filter_alt_outlined),
               title: Text('Filters'),
             ),
             ListTile(
               title: TextButton(
-                child: Text("Signout"),
+                child: const Text("Signout"),
                 onPressed: () {
-                  Signout(context);
+                  signOut(context);
                 },
               ),
             ),
@@ -97,11 +97,11 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
-  Future Signout(context) async {
+  Future signOut(context) async {
     await FirebaseAuth.instance.signOut().then((_) {
       Navigator.pushReplacementNamed(context, 'login');
 
-      return LoginScreen(title: 'Login');
+      return const LoginScreen(title: 'Login');
     });
   }
 }
